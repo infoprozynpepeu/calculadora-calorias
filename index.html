@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Calorias</title>
+    <title>Calculadora de Peso Ideal</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,87 +13,23 @@
         h2 {
             color: #333;
         }
-        label, select, input {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 20px;
-        }
-        button {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-        p#resultado {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #007bff;
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-
-    <h2>Calculadora de Calorias</h2>
-    
-    <label for="peso">Peso (kg):</label>
-    <input type="number" id="peso" placeholder="Digite seu peso em kg" required>
-
-    <label for="altura">Altura (cm):</label>
-    <input type="number" id="altura" placeholder="Digite sua altura em cm" required>
-
-    <label for="idade">Idade:</label>
-    <input type="number" id="idade" placeholder="Digite sua idade" required>
-
-    <label for="sexo">Sexo:</label>
-    <select id="sexo">
-        <option value="masculino">Masculino</option>
-        <option value="feminino">Feminino</option>
-    </select>
-
-    <label for="atividade">Nível de Atividade Física:</label>
-    <select id="atividade">
-        <option value="1.2">Sedentário</option>
-        <option value="1.375">Levemente ativo</option>
-        <option value="1.55">Moderadamente ativo</option>
-        <option value="1.725">Muito ativo</option>
-    </select>
-
-    <button onclick="calcularCalorias()">Calcular</button>
-
-    <p id="resultado"></p>
-
-
-    <script>
-        function calcularCalorias() {
-            var peso = document.getElementById("peso").value;
-            var altura = document.getElementById("altura").value;
-            var idade = document.getElementById("idade").value;
-            var sexo = document.getElementById("sexo").value;
-            var atividade = document.getElementById("atividade").value;
-
-            var calorias = 0;
-
-            if (sexo === "masculino") {
-                calorias = 66 + (13.7 * peso) + (5 * altura) - (6.8 * idade);
-            } else {
-                calorias = 655 + (9.6 * peso) + (1.8 * altura) - (4.7 * idade);
-            }
-
-            calorias *= atividade;
-
-            document.getElementById("resultado").innerHTML = "Você precisa de " + calorias.toFixed(2) + " calorias por dia.";
-        }
-    </script>
-
+    <div class="container">
+        <h2>Calculadora de Peso Ideal</h2>
+        <div class="yz-widget" data-calculator-type="ideal_weight" data-language="pt" data-unit-system="metric" data-background-color="#EEEEEE" data-text-color="#212121" data-primary-color="#03A9F4" data-alternate-background-color="#FFFFFF" data-alternate-text-color="#FFFFFF" data-secondary-color="#FFC107">
+            <span class="yz-copyright">Powered by <a href="https://www.yazio.com/pt/calculadora-peso-ideal">YAZIO</a></span>
+        </div>
+        <script src="https://widget.yazio.com/calculator.js" async></script>
+    </div>
 </body>
 </html>
